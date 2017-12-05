@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        if(hourOfDay <=9) {
+                        if(hourOfDay >= 2 && hourOfDay <= 9) {
                             textView.setText("おはよう");
-                        }else if(hourOfDay <= 17) {
+                        }else if(hourOfDay >= 10 && hourOfDay <= 17) {
                             textView.setText("こんにちは");
-                        }else if(hourOfDay <=1){
+                        }else {
                             textView.setText("こんばんは");
-                        }
+                        };
                     }
                 }, 0, 0, true);
                 timePickerDialog.show();
